@@ -1,0 +1,17 @@
+<div class="card">
+  @if (tasksService.tasks$ | async; as tasks) { @if(tasks.length > 0) { @for
+  (task of tasks; track task.taskId){
+  <div class="card-body">
+    <app-task [task]="task" />
+  </div>
+  } } @else {
+  <div class="text-center mt-4">
+    <p>Brak zadań do wykonania.</p>
+  </div>
+  } } @else {
+  <div class="text-center mt-4">
+    <div class="spinner-border" role="status"></div>
+    <p>Ładowanie zadań...</p>
+  </div>
+  }
+</div>

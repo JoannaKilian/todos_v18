@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header bg-primary">
+      <h5 class="modal-title">
+        {{ task() ? "Edytuj zadanie" : "Dodaj zadanie" }}
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="closeEmmit()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <app-add-edit-task-form
+        [task]="task()"
+        (formIsVald)="formIsValid = $event"
+        (close)="closeEmmit()"
+        [submit]="submitClicked()"
+      />
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeEmmit()">
+        Powrót
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        [disabled]="!formIsValid"
+        (click)="submitClicked.set(true)"
+      >
+        {{ task() ? "Edytuj zadanie" : "Dodaj zadanie" }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container mt-2">
+  <form [formGroup]="form">
+    <div class="row g-2">
+      <div class="col-12 col-sm-6 col-md-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Szukaj.."
+          formControlName="name"
+        />
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <input type="date" class="form-control" formControlName="date" />
+      </div>
+      <div class="col-10 col-sm-10 col-md-5">
+        <select
+          class="form-select"
+          formControlName="status"
+          placeholder="Szukaj.."
+        >
+          <option value="all">Wszystkie statusy</option>
+          @for (status of availabeStatus; track status) {
+          <option [value]="status">{{ status }}</option>
+          }
+        </select>
+      </div>
+      <div
+        class="col-2 col-sm-2 col-md-1 d-flex align-items-center justify-content-end"
+      >
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          (click)="tasksService.clearFilters()"
+        >
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
