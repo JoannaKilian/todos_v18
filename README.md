@@ -1,5 +1,18 @@
 # TodosV18
 
+Visit page: https://joannakilian.github.io/todos_v18/
+
+
+![image](https://github.com/user-attachments/assets/016a3f26-fe1d-4dd3-816a-a6e97baac392)
+
+![image](https://github.com/user-attachments/assets/7f28333b-03a8-4da9-9cb4-5cd1da3afcf9)
+
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
 
 ## Development server
